@@ -7,7 +7,7 @@ import { Button } from './components/ui/button';
 import { useState } from 'react';
 
 function App() {
-    const [showCamera, setShowCamera] = useState(false);
+  const [showCamera, setShowCamera] = useState(false);
   const [photo, setPhoto] = useState<string | null>(null);
 
   return (
@@ -37,7 +37,11 @@ function App() {
             {/* <InstructionsCarousel items={items} /> */}
 
             {photo && (
-              <img src={photo} alt="Captured" className="object-cover w-40 h-40" />
+              <img
+                src={photo}
+                alt="Captured"
+                className="object-cover w-40 h-40"
+              />
             )}
 
             <Button

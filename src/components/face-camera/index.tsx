@@ -186,7 +186,11 @@ declare global {
   }
 }
 
-export default function FacialCamera() {
+interface FacialCameraProps {
+  onPhotoTaken?: (dataUrl: string) => void;
+}
+
+export default function FacialCamera({ onPhotoTaken }: FacialCameraProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isCameraActive, setIsCameraActive] = useState(false);
@@ -370,7 +374,9 @@ export default function FacialCamera() {
             <Button variant="secondary" onClick={resetPhoto}>
               Tirar outra
             </Button>
-            <Button onClick={() => alert('Foto confirmada!')}>Confirmar</Button>
+            <Button onClick={() => onPhotoTaken && onPhotoTaken('dasdsdsa')}>
+              Confirmar
+            </Button>
           </div>
         </div>
       )}
