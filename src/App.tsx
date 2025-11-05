@@ -19,7 +19,7 @@ function App() {
         duration={5000}
       />
       <>
-        <div className="flex flex-col min-h-screen bg-background">
+        <div className="flex flex-col h-screen bg-background">
           <TitlePage bgVariant="white">
             <h3 className="text-lg font-semibold">
               Para sua segurança, vamos fazer uma verificação facial antes de
@@ -52,7 +52,7 @@ function App() {
             </Button>
           </ResponsiveContainer>
           <div
-            className={` bg-white  absolute w-full min-h-screen z-50 ${showCamera ? '' : 'hidden'}`}
+            className={`bg-red-500 fixed w-full h-full z-50 ${showCamera ? '' : 'hidden'}`}
           >
             <FaceCamera
               onPhotoTaken={url => {
