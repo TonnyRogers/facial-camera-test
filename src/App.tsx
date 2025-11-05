@@ -52,7 +52,7 @@ function App() {
             </Button>
           </ResponsiveContainer>
           <div
-            className={`flex flex-col bg-white absolute w-full min-h-screen z-50 ${showCamera ? '' : 'hidden'}`}
+            className={`flex flex-col bg-white  absolute w-full min-h-screen z-50 ${showCamera ? '' : 'hidden'}`}
           >
             <FaceCamera
               onPhotoTaken={url => {

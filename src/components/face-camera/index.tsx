@@ -26,7 +26,7 @@ const SmartFaceCamera = ({ onPhotoTaken }: SmartFaceCameraProps) => {
 
     const faceMesh = new FaceMesh({
       locateFile: file =>
-        `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`, // ✅ FIXED
+        `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`,
     });
 
     faceMesh.setOptions({
@@ -42,7 +42,7 @@ const SmartFaceCamera = ({ onPhotoTaken }: SmartFaceCameraProps) => {
       overlayCtx.save();
       overlayCtx.clearRect(0, 0, overlayElement.width, overlayElement.height);
 
-      // Draw circular guide
+
       const radius = overlayElement.width * 0.35;
       overlayCtx.beginPath();
       overlayCtx.arc(
@@ -92,7 +92,6 @@ const SmartFaceCamera = ({ onPhotoTaken }: SmartFaceCameraProps) => {
       overlayCtx.restore();
     });
 
-    // ✅ Responsive resizing
     const resizeCanvas = () => {
       overlayElement.width = videoElement.videoWidth;
       overlayElement.height = videoElement.videoHeight;
@@ -129,17 +128,17 @@ const SmartFaceCamera = ({ onPhotoTaken }: SmartFaceCameraProps) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-full max-w-md mx-auto space-y-4">
+    <div className="flex flex-col items-center h-screen justify-center w-full  max-w-md mx-auto space-y-4">
       {!photo && (
         <p className="mt-4 text-sm text-center text-muted-foreground">
           Encaixe seu rosto no círculo abaixo e clique em “Tirar foto”:
         </p>
       )}
 
-      <div className="relative w-full aspect-square bg-black rounded-lg overflow-hidden">
+      <div className="relative w-full h-[80%] aspect-square bg-black overflow-hidden">
         <video
           ref={videoRef}
-          className={`absolute inset-0 w-full h-full object-cover ${photo ? 'hidden' : ''}`}
+          className={`absolute inset-0 h-full object-cover ${photo ? 'hidden' : ''}`}
           autoPlay
           playsInline
           muted
