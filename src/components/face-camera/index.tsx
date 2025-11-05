@@ -42,7 +42,6 @@ const SmartFaceCamera = ({ onPhotoTaken }: SmartFaceCameraProps) => {
       overlayCtx.save();
       overlayCtx.clearRect(0, 0, overlayElement.width, overlayElement.height);
 
-
       const radius = overlayElement.width * 0.35;
       overlayCtx.beginPath();
       overlayCtx.arc(
@@ -85,7 +84,7 @@ const SmartFaceCamera = ({ onPhotoTaken }: SmartFaceCameraProps) => {
         setFeedback(msg);
       } else {
         setFeedback(
-          'Rosto não detectado — centralize o rosto dentro do círculo 🧠'
+          'Rosto não detectado — centralize o rosto dentro do círculo 👤'
         );
       }
 
@@ -128,14 +127,15 @@ const SmartFaceCamera = ({ onPhotoTaken }: SmartFaceCameraProps) => {
   };
 
   return (
-    <div className="flex flex-col items-center h-screen justify-center w-full  max-w-md mx-auto space-y-4">
-      {!photo && (
-        <p className="mt-4 text-sm text-center text-muted-foreground">
-          Encaixe seu rosto no círculo abaixo e clique em “Tirar foto”:
-        </p>
-      )}
-
-      <div className="relative w-full h-[70%] aspect-square bg-black overflow-hidden">
+    <div className="flex flex-col h-screen justify-center w-full  max-w-md mx-auto ">
+      <div className="flex justify-center items-center h-[10%] w-full">
+        {!photo && (
+          <p className="text-sm  text-center text-muted-foreground">
+            Encaixe seu rosto no círculo abaixo e clique em “Tirar foto”:
+          </p>
+        )}
+      </div>
+      <div className="relative h-[75%] w-full aspect-square bg-black overflow-hidden">
         <video
           ref={videoRef}
           className={`absolute inset-0 h-full object-cover ${photo ? 'hidden' : ''}`}
@@ -143,10 +143,14 @@ const SmartFaceCamera = ({ onPhotoTaken }: SmartFaceCameraProps) => {
           playsInline
           muted
         />
+ 
         <canvas
           ref={overlayRef}
           className={`absolute inset-0 w-full h-full ${photo ? 'hidden' : ''}`}
+          width={720}
+          height={720}
         />
+
         {photo && (
           <img
             src={photo}
@@ -171,16 +175,19 @@ const SmartFaceCamera = ({ onPhotoTaken }: SmartFaceCameraProps) => {
           )}
         </div>
       </div>
+      <div className="flex justify-center items-center h-[10%] w-full">
+        {!photo && (
+          <p className="text-sm text-center text-muted-foreground">
+            {feedback}
+          </p>
+        )}
 
-      {!photo && (
-        <p className="text-sm text-center text-muted-foreground">{feedback}</p>
-      )}
-
-      {photo && onPhotoTaken && (
-        <Button onClick={() => onPhotoTaken(photo)} className="w-56">
-          Usar esta
-        </Button>
-      )}
+        {photo && onPhotoTaken && (
+          <Button onClick={() => onPhotoTaken(photo)} className="w-56">
+            Usar esta
+          </Button>
+        )}
+      </div>
     </div>
   );
 };
