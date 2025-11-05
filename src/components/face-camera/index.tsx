@@ -133,7 +133,7 @@ const SmartFaceCamera = ({ onPhotoTaken }: SmartFaceCameraProps) => {
           Encaixe seu rosto no círculo abaixo e clique em “Tirar foto”:
         </p>
       </div>
-      <div className="flex relative h-[80vh] w-full bg-blue-600 aspect-square bg-black overflow-hidden">
+      <div className="flex relative h-[75vh] w-full bg-blue-600 aspect-square bg-black overflow-hidden">
         <video
           ref={videoRef}
           className={`absolute inset-0 h-full object-cover ${photo ? 'hidden' : ''}`}
