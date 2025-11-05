@@ -1,8 +1,6 @@
 import React, { ReactNode } from 'react';
 import { Logo } from '@/components/ui/logo';
 import { ResponsiveContainer } from '@/components/layouts';
-import { useNavigate } from 'react-router-dom';
-import { ROUTES } from '@/routes/routes';
 import { cn } from '@/lib/utils';
 
 interface TitlePageProps {
@@ -25,12 +23,12 @@ export const TitlePage: React.FC<TitlePageProps> = ({
   bgVariant = 'default',
   children,
 }) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
     <div className={cn(bgVariants[bgVariant], className)}>
       <ResponsiveContainer maxWidth="desktop" padding="lg">
         <div className="flex flex-col">
-          <div onClick={() => navigate(ROUTES.BENEFICIARIES)}>
+          <div onClick={() => {}}>
             <Logo className="mb-10 cursor-pointer" />
           </div>
 

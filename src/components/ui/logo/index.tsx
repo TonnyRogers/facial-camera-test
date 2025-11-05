@@ -1,5 +1,5 @@
 import React from 'react';
-import logoLeve from '@/assets/svgs/logo-leve.svg';
+import logoLeve from '@/assets/react.svg';
 
 interface LogoProps {
   className?: string;
