@@ -135,7 +135,7 @@ const SmartFaceCamera = ({ onPhotoTaken }: SmartFaceCameraProps) => {
         </p>
       )}
 
-      <div className="relative w-full h-[80%] aspect-square bg-black overflow-hidden">
+      <div className="relative w-full h-[70%] aspect-square bg-black overflow-hidden">
         <video
           ref={videoRef}
           className={`absolute inset-0 h-full object-cover ${photo ? 'hidden' : ''}`}
