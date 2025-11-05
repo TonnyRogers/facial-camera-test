@@ -1,0 +1,152 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@theme {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Import colors from colors.ts - SINGLE SOURCE OF TRUTH */
+  --color-primary: theme('colors.brand.primary');
+  --color-secondary: theme('colors.brand.secondary');
+  --color-accent: theme('colors.brand.accent');
+
+  /* Semantic Colors */
+  --color-background: theme('colors.semantic.background.primary');
+  --color-foreground: theme('colors.semantic.text.primary');
+  --color-card: theme('colors.semantic.background.card');
+  --color-card-foreground: theme('colors.semantic.text.primary');
+  --color-popover: theme('colors.semantic.background.card');
+  --color-popover-foreground: theme('colors.semantic.text.primary');
+  --color-muted: theme('colors.semantic.background.gray');
+  --color-muted-foreground: theme('colors.semantic.text.placeholder');
+  --color-border: theme('colors.semantic.border.primary');
+  --color-input: theme('colors.semantic.border.input');
+  --color-ring: theme('colors.neutral.500');
+
+  /* Text Colors */
+  --color-text-primary: theme('colors.semantic.text.primary');
+  --color-text-secondary: theme('colors.semantic.text.secondary');
+  --color-text-placeholder: theme('colors.semantic.text.placeholder');
+  --color-text-inverse: theme('colors.semantic.text.inverse');
+
+  /* Background Colors */
+  --color-background-primary: theme('colors.semantic.background.primary');
+  --color-background-secondary: theme('colors.semantic.background.secondary');
+  --color-background-card: theme('colors.semantic.background.card');
+  --color-background-gray: theme('colors.semantic.background.gray');
+
+  /* Border Colors */
+  --color-border-primary: theme('colors.semantic.border.primary');
+  --color-border-input: theme('colors.semantic.border.input');
+  --color-border-focus: theme('colors.semantic.border.focus');
+
+  /* Neutral Colors */
+  --color-neutral-50: theme('colors.neutral.50');
+  --color-neutral-100: theme('colors.neutral.100');
+  --color-neutral-200: theme('colors.neutral.200');
+  --color-neutral-300: theme('colors.neutral.300');
+  --color-neutral-400: theme('colors.neutral.400');
+  --color-neutral-500: theme('colors.neutral.500');
+  --color-neutral-600: theme('colors.neutral.600');
+  --color-neutral-700: theme('colors.neutral.700');
+  --color-neutral-800: theme('colors.neutral.800');
+  --color-neutral-900: theme('colors.neutral.900');
+  --color-neutral-1000: theme('colors.neutral.1000');
+
+  /* Feedback Colors */
+  --color-success: theme('colors.feedback.success.500');
+  --color-warning: theme('colors.feedback.warning.500');
+  --color-destructive: theme('colors.feedback.error.500');
+
+  /* Success Scale */
+  --color-success-50: theme('colors.feedback.success.50');
+  --color-success-100: theme('colors.feedback.success.100');
+  --color-success-200: theme('colors.feedback.success.200');
+  --color-success-300: theme('colors.feedback.success.300');
+  --color-success-400: theme('colors.feedback.success.400');
+  --color-success-500: theme('colors.feedback.success.500');
+  --color-success-600: theme('colors.feedback.success.600');
+  --color-success-700: theme('colors.feedback.success.700');
+  --color-success-800: theme('colors.feedback.success.800');
+  --color-success-900: theme('colors.feedback.success.900');
+
+  /* Warning Scale */
+  --color-warning-50: theme('colors.feedback.warning.50');
+  --color-warning-100: theme('colors.feedback.warning.100');
+  --color-warning-200: theme('colors.feedback.warning.200');
+  --color-warning-300: theme('colors.feedback.warning.300');
+  --color-warning-400: theme('colors.feedback.warning.400');
+  --color-warning-500: theme('colors.feedback.warning.500');
+  --color-warning-600: theme('colors.feedback.warning.600');
+  --color-warning-700: theme('colors.feedback.warning.700');
+  --color-warning-800: theme('colors.feedback.warning.800');
+  --color-warning-900: theme('colors.feedback.warning.900');
+
+  /* Error Scale */
+  --color-error-50: theme('colors.feedback.error.50');
+  --color-error-100: theme('colors.feedback.error.100');
+  --color-error-200: theme('colors.feedback.error.200');
+  --color-error-300: theme('colors.feedback.error.300');
+  --color-error-400: theme('colors.feedback.error.400');
+  --color-error-500: theme('colors.feedback.error.500');
+  --color-error-600: theme('colors.feedback.error.600');
+  --color-error-700: theme('colors.feedback.error.700');
+  --color-error-800: theme('colors.feedback.error.800');
+  --color-error-900: theme('colors.feedback.error.900');
+
+  /* Chart Colors */
+  --color-chart-1: theme('colors.brand.primary');
+  --color-chart-2: theme('colors.brand.secondary');
+  --color-chart-3: theme('colors.special.card.blueDental');
+  --color-chart-4: theme('colors.feedback.warning.700');
+  --color-chart-5: theme('colors.feedback.success.700');
+
+  /* Sidebar Colors */
+  --color-sidebar: theme('colors.semantic.background.primary');
+  --color-sidebar-foreground: theme('colors.semantic.text.primary');
+  --color-sidebar-primary: theme('colors.brand.primary');
+  --color-sidebar-primary-foreground: theme('colors.neutral.50');
+  --color-sidebar-accent: theme('colors.semantic.background.gray');
+  --color-sidebar-accent-foreground: theme('colors.semantic.text.primary');
+  --color-sidebar-border: theme('colors.semantic.border.primary');
+  --color-sidebar-ring: theme('colors.neutral.500');
+}
+
+:root {
+  --radius: 0.625rem;
+}
+
+@layer base {
+  * {
+    @apply border-gray-200 outline-gray-500/50;
+    font-family:
+      'Raleway',
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Roboto,
+      sans-serif !important;
+  }
+  body {
+    @apply text-gray-900 bg-white;
+    font-family:
+      'Raleway',
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Roboto,
+      sans-serif !important;
+  }
+  html {
+    font-family:
+      'Raleway',
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Roboto,
+      sans-serif !important;
+  }
+}
