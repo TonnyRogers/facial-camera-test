@@ -128,12 +128,12 @@ const SmartFaceCamera = ({ onPhotoTaken }: SmartFaceCameraProps) => {
 
   return (
     <div className="flex flex-col p2 bg-gree-400 justify-center w-full max-w-md mx-auto ">
-      <div className="flex border-lime-500 justify-center items-center w-full h-[8vh]">
+      <div className="flex justify-center items-center w-full h-[8vh]">
         <p className="text-sm  text-center text-muted-foreground">
           Encaixe seu rosto no círculo abaixo e clique em “Tirar foto”:
         </p>
       </div>
-      <div className="flex relative h-[70vh] w-full bg-blue-600 aspect-square bg-black overflow-hidden">
+      <div className="flex relative h-[70vh] w-fullaspect-square bg-black overflow-hidden">
         <video
           ref={videoRef}
           className={`absolute inset-0 h-full object-cover ${photo ? 'hidden' : ''}`}
@@ -173,7 +173,7 @@ const SmartFaceCamera = ({ onPhotoTaken }: SmartFaceCameraProps) => {
           )}
         </div>
       </div>
-      <div className="flex bg-fuchsia-500 justify-center items-center w-full h-[8vh]">
+      <div className="flexjustify-center items-center w-full h-[8vh]">
         {!photo && (
           <p className="text-sm text-center text-muted-foreground">
             {feedback}
