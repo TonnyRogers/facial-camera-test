@@ -173,9 +173,9 @@ const SmartFaceCamera = ({ onPhotoTaken }: SmartFaceCameraProps) => {
           )}
         </div>
       </div>
-      <div className="flexjustify-center items-center w-full h-[8vh]">
+      <div className="flex mt-2 justify-center items-center w-full h-[8vh]">
         {!photo && (
-          <p className="text-sm text-center text-muted-foreground">
+          <p className="text-sm text-center  text-muted-foreground">
             {feedback}
           </p>
         )}

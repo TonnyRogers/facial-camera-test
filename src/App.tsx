@@ -52,7 +52,7 @@ function App() {
             </Button>
           </ResponsiveContainer>
           <div
-            className={`fixed w-full h-full z-50 ${showCamera ? '' : 'hidden'}`}
+            className={`fixed bg-white w-full h-full z-50 ${showCamera ? '' : 'hidden'}`}
           >
             <FaceCamera
               onPhotoTaken={url => {
